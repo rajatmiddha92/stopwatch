@@ -10,12 +10,12 @@ start.addEventListener('click',()=>{
  clock()
 })
 const clock=()=>{
-    let HH='00',MM='00',SS='00',MS='000'
+    let HH='00',MM='00',SS='00',MS='00'
 timer=setInterval(()=>{
        time.innerHTML= `${HH} : ${MM} : ${SS} : ${MS}`
        MS=parseInt(MS)
        MS++
-       if(MS==1000){
+       if(MS==100){
         MS=0
         SS=parseInt(SS)
         SS++
@@ -40,7 +40,7 @@ timer=setInterval(()=>{
         }
 
        }
-    },0.00000001)
+    },10)
 }
 let c=1
 cast.addEventListener('click',()=>{
@@ -55,7 +55,7 @@ pause.addEventListener('click',()=>{
 })
 reset.addEventListener('click',()=>{
     clearInterval(timer)
-    time.innerHTML=`0 0 : 0 0 : 0 0 : 0 0 0`
+    time.innerHTML=`0 0 : 0 0 : 0 0 : 0 0 `
     while(list.firstElementChild){
     list.removeChild(list.firstElementChild)}
 })
